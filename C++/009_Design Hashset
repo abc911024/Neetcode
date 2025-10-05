@@ -1,0 +1,24 @@
+class MyHashSet {
+public:
+    vector<int> res;
+    MyHashSet() {
+        
+    }
+    
+    void add(int key) {
+        if (find(res.begin(), res.end(), key) == res.end()){
+            res.push_back(key);
+        }
+    }
+    
+    void remove(int key) {
+        auto it = find(res.begin(), res.end(), key);
+        if (it != res.end()) {
+            res.erase(it);
+        }
+    }
+    
+    bool contains(int key) {
+        return find(res.begin(), res.end(), key) != res.end();
+    }
+};

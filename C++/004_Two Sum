@@ -1,0 +1,19 @@
+//hash map 存Val跟Index 每次用target-當前值去hash map中搜尋
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n = nums.size();
+        unordered_map<int, int> prevMap;//<num,num出現的位址>
+        //num:2 3 5 1 
+        //pre:_ 3 0 1 _ 2 (3 代表3出現在index 1)
+        for (int i =0;i<n;i++){ //先查再插
+            int diff = target-nums[i];
+            if (prevMap.find(diff) != prevMap.end()) {
+                return {prevMap[diff], i};
+            }
+            prevMap.insert({nums[i], i});
+        }
+        return {};
+
+    }
+};

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "008_majority element": "cpp"
+        "008_majority element": "cpp",
+        "001_concatenation of array": "cpp"
     }
 }
